@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070a16">
+<title>A Little Wish for You 💛</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="twinkles" aria-hidden="true"></div>
+<header class="topbar">
+  <a href="#" class="brand" id="homeBtn">M<span>✦</span>D</a>
+  <div class="counter" id="counter">01 / 10</div>
+  <button class="music-toggle" id="musicBtn" type="button" aria-label="Play or pause melody">♫ <span id="musicLabel">Play melody</span></button>
+</header>
+<audio id="melody" src="assets/gentle-melody.wav" loop preload="auto"></audio>
+<main>
+  <section class="page active" id="p1">
+    <div class="eyebrow">A LITTLE SOMETHING, JUST FOR YOU</div>
+    <img class="hero-gift" src="assets/neon-gift.png" alt="A glowing gift with a pink ribbon">
+    <p class="ornament">✦ ✧ ✦</p>
+    <h1>For My <span>Dearest</span></h1>
+    <p class="lead">A little gift, a little wish, and a whole lot of care.</p>
+    <p class="soft">Nimekuandalia surprise ndogo yenye picha, wishes, na zawadi ya mwisho. Take your time and enjoy every page. ♡</p>
+    <button class="btn primary" data-next>Open your surprise <b>→</b></button>
+    <p class="tiny">MADE WITH CARE · JUST FOR YOU</p>
+  </section>
+
+  <section class="page" id="p2">
+    <div class="eyebrow">CHAPTER 02 · A LITTLE MEMORY</div>
+    <h2>A moment I'd keep forever</h2>
+    <img class="feature-image" src="assets/memory-guitar.png" alt="Illustration of a couple sharing music under glowing lights">
+    <p class="lead">Some memories are beautiful even before they happen.</p>
+    <p class="soft">Natamani tutengeneze kumbukumbu nzuri pamoja—tukicheka, tukiongea, na kufurahia muda wetu bila haraka. ✨</p>
+    <button class="btn primary" data-next>Keep going →</button>
+  </section>
+
+  <section class="page" id="p3">
+    <div class="eyebrow">CHAPTER 03 · A SWEET WISH</div>
+    <h2>Just one little question...</h2>
+    <img class="feature-image short" src="assets/memory-rose.png" alt="Illustration of a young couple sharing a rose">
+    <p class="lead">Are you free today so I can take you out somewhere nice? 💛</p>
+    <p class="soft">Unaweza kuwa free kwa siku ya leo ili nikutoe tukapate muda mzuri pamoja?</p>
+    <div class="choice-row">
+      <button class="btn primary" id="freeYes">Agree 💛</button>
+      <button class="btn outline no-button" id="freeNo">Disagree</button>
+    </div>
+    <p class="feedback" id="freeFeedback" aria-live="polite">Choose honestly. The “Agree” button opens the next page.</p>
+  </section>
+
+  <section class="page" id="p4">
+    <div class="eyebrow">CHAPTER 04 · PICK OUR PLAN</div>
+    <h2>Where would you like us to go?</h2>
+    <p class="soft center">Chagua sehemu unayoipenda zaidi.</p>
+    <div class="option-grid" id="placeOptions">
+      <button class="option selected" data-value="Beach"><span>🌊</span><b>Beach</b><small>Sea breeze & sunset</small></button>
+      <button class="option" data-value="A nice café"><span>☕</span><b>A nice café</b><small>Talk and relax</small></button>
+      <button class="option" data-value="A peaceful garden"><span>🌿</span><b>Peaceful garden</b><small>Fresh air & calm</small></button>
+      <button class="option" data-value="A walk in town"><span>🌆</span><b>Walk in town</b><small>Explore together</small></button>
+    </div>
+    <img class="small-image" src="assets/yellow-tulips.png" alt="Bright yellow tulips">
+    <button class="btn primary" id="placeNext">That's my choice →</button>
+    <p class="feedback" id="placeFeedback" aria-live="polite"></p>
+  </section>
+
+  <section class="page" id="p5">
+    <div class="eyebrow">CHAPTER 05 · CHOOSE THE DAY</div>
+    <h2>Which day works for you?</h2>
+    <p class="soft center">Chagua siku na tarehe ambayo itakufaa.</p>
+    <label for="day">Day of the week</label>
+    <select id="day">
+      <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+      <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+    </select>
+    <label for="date">Date</label>
+    <input id="date" type="date">
+    <label for="time">Time</label>
+    <input id="time" type="time" value="16:00">
+    <div class="summary-card" id="dateSummary">Your selected day and time will appear here.</div>
+    <button class="btn primary" id="dateNext">Confirm the time →</button>
+    <p class="feedback" id="dateFeedback" aria-live="polite"></p>
+  </section>
+
+  <section class="page" id="p6">
+    <div class="eyebrow">CHAPTER 06 · A LITTLE TREAT</div>
+    <h2>Would you like some ice cream?</h2>
+    <img class="feature-image short" src="assets/good-morning-rose.png" alt="Purple rose with a good morning message">
+    <p class="lead">Ice cream makes a lovely day even sweeter. 🍦</p>
+    <div class="option-grid two" id="iceOptions">
+      <button class="option selected" data-value="Chocolate"><span>🍫🍦</span><b>Chocolate</b><small>Rich and sweet</small></button>
+      <button class="option" data-value="Vanilla"><span>🍨</span><b>Vanilla</b><small>Soft and creamy</small></button>
+      <button class="option" data-value="Strawberry"><span>🍓🍦</span><b>Strawberry</b><small>Fruity and fresh</small></button>
+      <button class="option" data-value="No ice cream"><span>🙅</span><b>Dislike</b><small>No ice cream, please</small></button>
+    </div>
+    <p class="feedback" id="iceFeedback" aria-live="polite">Choose a flavour you like.</p>
+    <button class="btn primary" id="iceNext">Confirm my treat →</button>
+  </section>
+
+  <section class="page" id="p7">
+    <div class="eyebrow">CHAPTER 07 · A GOOD MORNING WISH</div>
+    <h2>May your day begin beautifully</h2>
+    <img class="feature-image" src="assets/good-morning-candle.png" alt="A soft glowing candle surrounded by flowers">
+    <p class="lead">May your morning bring peace, your afternoon bring joy, and your evening bring a reason to smile.</p>
+    <p class="soft">Nakutakia siku yenye furaha, mafanikio na amani. Kila jambo jema likukaribie, na tabasamu lako liendelee kung'aa. 🌷</p>
+    <button class="btn primary" data-next>One more wish →</button>
+  </section>
+
+  <section class="page" id="p8">
+    <div class="eyebrow">CHAPTER 08 · YOUR LITTLE GALLERY</div>
+    <h2>Flowers, smiles & sweet moments</h2>
+    <div class="gallery">
+      <figure><img src="assets/neon-gift.png" alt="Neon gift"><figcaption>A surprise for you</figcaption></figure>
+      <figure><img src="assets/memory-guitar.png" alt="Couple enjoying music"><figcaption>Music and memories</figcaption></figure>
+      <figure><img src="assets/memory-rose.png" alt="Couple with a rose"><figcaption>A little romance</figcaption></figure>
+      <figure><img src="assets/good-morning-rose.png" alt="Purple rose"><figcaption>A gentle greeting</figcaption></figure>
+      <figure><img src="assets/yellow-tulips.png" alt="Yellow tulips"><figcaption>Flowers for your day</figcaption></figure>
+      <figure><img src="assets/good-morning-candle.png" alt="Candle and flowers"><figcaption>Peace and light</figcaption></figure>
+    </div>
+    <button class="btn primary" data-next>Ready for the final surprise? →</button>
+  </section>
+
+  <section class="page" id="p9">
+    <div class="eyebrow">CHAPTER 09 · THE MOMENT BEFORE</div>
+    <div class="sparkle">✧</div>
+    <h2>Ready for the final surprise?</h2>
+    <p class="lead">Take a breath. Make a wish.</p>
+    <p class="soft center">Washa melody, kisha gusa kitufe kufungua zawadi yako ya mwisho.</p>
+    <div class="countdown" id="countdown">3</div>
+    <div class="progress"><span id="progressBar"></span></div>
+    <button class="btn primary" id="readyBtn">Open the final gift ✨</button>
+  </section>
+
+  <section class="page final-page" id="p10">
+    <div class="eyebrow">CHAPTER 10 · MADE JUST FOR YOU</div>
+    <h2>Your gift is waiting...</h2>
+    <p class="soft center">Tap the gift box to open it. 🎁</p>
+    <button class="gift-scene" id="giftBox" aria-label="Open the gift box">
+      <span class="glow"></span><span class="box-lid"></span><span class="gift-box-body"></span>
+      <span class="ribbon-v"></span><span class="ribbon-h"></span><span class="bow">🎀</span>
+      <span class="flower flower1">🌸</span><span class="flower flower2">🌷</span><span class="flower flower3">🌼</span>
+      <span class="candle">🕯️</span>
+    </button>
+    <div class="cake-reveal" id="cakeReveal" aria-hidden="true">
+      <div class="cake">🎂</div>
+      <h3>A sweet wish for you!</h3>
+      <p>May your life be filled with love, laughter, sweet surprises, and beautiful beginnings.</p>
+      <p class="soft">Nakutakia maisha yenye furaha, upendo na mafanikio. Asante kwa kuwa mtu wa kipekee. 💛</p>
+      <div class="final-flowers">🌹 🌷 🌸 🌼 🌺</div>
+      <p class="signature">With care, always ♡</p>
+      <div class="plan-result" id="planResult"></div>
+    </div>
+    <p class="feedback" id="giftFeedback" aria-live="polite">The flowers and cake are hiding inside. Tap the box!</p>
+    <button class="btn outline" id="replayBtn">Start again ↺</button>
+  </section>
+</main>
+<footer>Made with ♡ and a little stardust</footer>
+<script src="script.js"></script>
+</body>
+</html>
